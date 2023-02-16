@@ -42,11 +42,11 @@ class RegisterVC: UIViewController {
         
 //        change the check images from red to green or do someother animation.
         if registerPassword.text == registerPasswordConfig.text {
-            passwordCheckImg.image = UIImage.init(named: "green_check")
-            confirmPasswordCheckImg.image = UIImage.init(named: "green_check")
+            passwordCheckImg.image = UIImage.init(named: AppImages.GreenCheck)
+            confirmPasswordCheckImg.image = UIImage.init(named: AppImages.GreenCheck)
         } else {
-            passwordCheckImg.image = UIImage.init(named: "red_check")
-            confirmPasswordCheckImg.image = UIImage.init(named: "red_check")
+            passwordCheckImg.image = UIImage.init(named: AppImages.RedCheck)
+            confirmPasswordCheckImg.image = UIImage.init(named: AppImages.RedCheck)
         }
     }
     

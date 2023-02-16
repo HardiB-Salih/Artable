@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9CECB9A66AE413884B5FC795 /* Pods_Artable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB0443B802AD1C72DE416DE /* Pods_Artable.framework */; };
+		D5061CD0299E3E3E0046EFD6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5061CCF299E3E3E0046EFD6 /* Constants.swift */; };
+		D5061CD1299E3E3E0046EFD6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5061CCF299E3E3E0046EFD6 /* Constants.swift */; };
+		D5061CD4299E3E6A0046EFD6 /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5061CD3299E3E6A0046EFD6 /* RoundedViews.swift */; };
+		D5061CD5299E3E6A0046EFD6 /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5061CD3299E3E6A0046EFD6 /* RoundedViews.swift */; };
 		D5843039299987A50089CCB1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5843038299987A40089CCB1 /* GoogleService-Info.plist */; };
 		D584303B299987E20089CCB1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D584303A299987E20089CCB1 /* GoogleService-Info.plist */; };
 		D584304E29999E610089CCB1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D584304D29999E610089CCB1 /* LoginVC.swift */; };
@@ -36,6 +40,8 @@
 		90A4FF37B73A6D8833BC8C5C /* Pods-ArtableAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtableAdmin.debug.xcconfig"; path = "Target Support Files/Pods-ArtableAdmin/Pods-ArtableAdmin.debug.xcconfig"; sourceTree = "<group>"; };
 		A5E00645E71CA48B9DC5B2FF /* Pods-Artable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artable.debug.xcconfig"; path = "Target Support Files/Pods-Artable/Pods-Artable.debug.xcconfig"; sourceTree = "<group>"; };
 		D059255898237E14C83BC099 /* Pods-Artable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artable.release.xcconfig"; path = "Target Support Files/Pods-Artable/Pods-Artable.release.xcconfig"; sourceTree = "<group>"; };
+		D5061CCF299E3E3E0046EFD6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D5061CD3299E3E6A0046EFD6 /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
 		D5843038299987A40089CCB1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D584303A299987E20089CCB1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D584304D29999E610089CCB1 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -100,6 +106,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D5061CD2299E3E5C0046EFD6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5061CD3299E3E6A0046EFD6 /* RoundedViews.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D584304929999E110089CCB1 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				D58430522999A9CF0089CCB1 /* Extentions.swift */,
+				D5061CCF299E3E3E0046EFD6 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -195,6 +210,7 @@
 		D5CAF22329996DA20060E922 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				D5061CD2299E3E5C0046EFD6 /* View */,
 				D58430512999A9B40089CCB1 /* Utils */,
 				D5CAF20029996CE20060E922 /* Assets.xcassets */,
 			);
@@ -395,6 +411,8 @@
 				D5CAF1F829996CDF0060E922 /* AppDelegate.swift in Sources */,
 				D58430532999A9CF0089CCB1 /* Extentions.swift in Sources */,
 				D584304E29999E610089CCB1 /* LoginVC.swift in Sources */,
+				D5061CD4299E3E6A0046EFD6 /* RoundedViews.swift in Sources */,
+				D5061CD0299E3E3E0046EFD6 /* Constants.swift in Sources */,
 				D5CAF1FA29996CDF0060E922 /* SceneDelegate.swift in Sources */,
 				D584305029999E750089CCB1 /* RegisterVC.swift in Sources */,
 			);
@@ -404,6 +422,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5061CD5299E3E6A0046EFD6 /* RoundedViews.swift in Sources */,
+				D5061CD1299E3E3E0046EFD6 /* Constants.swift in Sources */,
 				D58430542999A9D30089CCB1 /* Extentions.swift in Sources */,
 				D5CAF21629996D2D0060E922 /* ViewController.swift in Sources */,
 				D5CAF21229996D2D0060E922 /* AppDelegate.swift in Sources */,
