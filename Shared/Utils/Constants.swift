@@ -44,3 +44,7 @@ struct Segues {
     static let ToAddEditProduct = "ToAddEditProduct"
     static let ToFavorites = "ToFavorites"
 }
+
+struct Stripe {
+    static let PublishKey = ""
+}

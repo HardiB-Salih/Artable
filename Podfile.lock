@@ -111,7 +111,7 @@ PODS:
   - gRPC-Core/Interface (1.21.0)
   - GTMSessionFetcher/Core (1.7.2)
   - IQKeyboardManagerSwift (6.3.0)
-  - Kingfisher (4.10.1)
+  - Kingfisher (7.6.0)
   - leveldb-library (1.22.1)
   - nanopb (0.3.9011):
     - nanopb/decode (= 0.3.9011)
@@ -120,15 +120,36 @@ PODS:
   - nanopb/encode (0.3.9011)
   - PromisesObjC (1.2.12)
   - Protobuf (3.21.12)
+  - Stripe (23.3.3):
+    - StripeApplePay (= 23.3.3)
+    - StripeCore (= 23.3.3)
+    - StripePayments (= 23.3.3)
+    - StripePaymentsUI (= 23.3.3)
+    - StripeUICore (= 23.3.3)
+  - StripeApplePay (23.3.3):
+    - StripeCore (= 23.3.3)
+  - StripeCore (23.3.3)
+  - StripePayments (23.3.3):
+    - StripeCore (= 23.3.3)
+    - StripePayments/Stripe3DS2 (= 23.3.3)
+  - StripePayments/Stripe3DS2 (23.3.3):
+    - StripeCore (= 23.3.3)
+  - StripePaymentsUI (23.3.3):
+    - StripeCore (= 23.3.3)
+    - StripePayments (= 23.3.3)
+    - StripeUICore (= 23.3.3)
+  - StripeUICore (23.3.3):
+    - StripeCore (= 23.3.3)
 
 DEPENDENCIES:
-  - Firebase/Auth (= 6.1.0)
-  - Firebase/Core (= 6.1.0)
-  - Firebase/Firestore (= 6.1.0)
-  - Firebase/Functions (= 6.1.0)
-  - Firebase/Storage (= 6.1.0)
+  - Firebase/Auth
+  - Firebase/Core
+  - Firebase/Firestore
+  - Firebase/Functions
+  - Firebase/Storage
   - IQKeyboardManagerSwift (= 6.3.0)
-  - Kingfisher (~> 4.0)
+  - Kingfisher (~> 7.0)
+  - Stripe
 
 SPEC REPOS:
   trunk:
@@ -153,6 +174,12 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - Protobuf
+    - Stripe
+    - StripeApplePay
+    - StripeCore
+    - StripePayments
+    - StripePaymentsUI
+    - StripeUICore
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
@@ -171,12 +198,18 @@ SPEC CHECKSUMS:
   gRPC-Core: c9aef9a261a1247e881b18059b84d597293c9947
   GTMSessionFetcher: 5595ec75acf5be50814f81e9189490412bad82ba
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
-  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  Kingfisher: b9bb0cd6907813593db268be80ddb931423c33b2
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Protobuf: 120350fc38646e2dedc26f49ecba778184ea1de2
+  Stripe: e12dd4f24d372fbae7b3090967bd416537a05324
+  StripeApplePay: b288df6ea5237bec30ff00b8e12b9465684813e6
+  StripeCore: 05ca3061651987b6aeb52028a8de087ad015d555
+  StripePayments: 63a4c0b41148c83c4197e8ff9f0295dd0829660b
+  StripePaymentsUI: f9c8a63faf4858f66e2302a717ebb7c928197f53
+  StripeUICore: 784efbcb5ed1e3dc69e4179e1a8feb247d792d81
 
-PODFILE CHECKSUM: 235f11dfeeea6bbfa19ee85a524ff4255f1a9856
+PODFILE CHECKSUM: 6d871058a6cd8d51d167019b3c6f599636023239
 
 COCOAPODS: 1.11.3

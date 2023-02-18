@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
 
 class RegisterVC: UIViewController {
     @IBOutlet weak var registerUserName: UITextField!
@@ -28,7 +28,7 @@ class RegisterVC: UIViewController {
         // Here we can check when text changes
         guard let password = registerPassword.text else { return }
         
-//        show the check images
+        //        show the check images
         if textField == registerPasswordConfig {
             passwordCheckImg.isHidden = false
             confirmPasswordCheckImg.isHidden = false
@@ -40,7 +40,7 @@ class RegisterVC: UIViewController {
             }
         }
         
-//        change the check images from red to green or do someother animation.
+        //        change the check images from red to green or do someother animation.
         if registerPassword.text == registerPasswordConfig.text {
             passwordCheckImg.image = UIImage.init(named: AppImages.GreenCheck)
             confirmPasswordCheckImg.image = UIImage.init(named: AppImages.GreenCheck)
@@ -54,23 +54,69 @@ class RegisterVC: UIViewController {
         
         guard let email = registerEmail.text , email.isNotEmpty,
               let username = registerUserName.text, username.isNotEmpty,
-              let password = registerPassword.text, password.isNotEmpty,
-              let confPassword = registerPasswordConfig.text , confPassword.isNotEmpty else { return }
+              let password = registerPassword.text, password.isNotEmpty else {
+            simpleAlert(title: "Error", msg: "Please fill out all fields.")
+            return
+        }
         
+        guard let confirmPass = registerPasswordConfig.text , confirmPass == password else {
+            simpleAlert(title: "Error", msg: "Passwords do not match.")
+            return
+        }
         progressBar.startAnimating()
         
-        Auth.auth().createUser(withEmail: email, password: password) { (authResult , error) in
-            
+        //How To register with email and password
+        //        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+        //            if let error = error {
+        //                debugPrint(error)
+        //                Auth.auth().handleFireAuthError(error: error, vc: self)
+        //                return
+        //            }
+        //
+        //            guard let firUser = result?.user else { return }
+        //            let artUser = User.init(id: firUser.uid, email: email, username: username, stripeId: "")
+        //            // Upload to Firestore
+        //            self.createFirestoreUser(user: artUser)
+        //        }
+        
+        
+        //How To register with existing Provider
+        guard let authUser = Auth.auth().currentUser else {
+            return
+        }
+        
+        let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+        
+        authUser.link(with: credential) { (result, error) in
             if let error = error {
-                debugPrint(error.localizedDescription)
+                debugPrint(error)
+                Auth.auth().handleFireAuthError(error: error, vc: self)
                 return
             }
             
-            self.progressBar.stopAnimating()
-            
-            print("successfully register new user")
+            guard let firUser = result?.user else { return }
+            let artUser = User.init(id: firUser.uid, email: email, username: username, stripeId: "")
+            // Upload to Firestore
+            self.createFirestoreUser(user: artUser)
         }
-        
     }
-
+    
+    func createFirestoreUser(user: User) {
+        // Step 1: Create document reference
+        let newUserRef = Firestore.firestore().collection("users").document(user.id)
+        
+        // Step 2: Create model data
+        let data = User.modelToData(user: user)
+        
+        // Step 3: Upload to Firestore.
+        newUserRef.setData(data) { (error) in
+            if let error = error {
+                Auth.auth().handleFireAuthError(error: error, vc: self)
+                debugPrint("Error signing in: \(error.localizedDescription)")
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
+            self.progressBar.stopAnimating()
+        }
+    }
 }
