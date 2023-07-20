@@ -30,7 +30,7 @@ sudo gem install cocoapods
 1. Clone the Artable repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/your-username/artable.git
+git clone https://github.com/HardiB-Salih/Artable.git
 ```
 
 2. Navigate to the project directory:
